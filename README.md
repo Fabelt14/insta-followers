@@ -1,6 +1,6 @@
 # follower-increaser
-# instagram # tracker and 
-# follow # increaser
+# instagram  tracker and 
+# follower increaser
 // 
 ---
 ![Ht](https://img.shields.io/badge/Made%20by-HackersTech-brightgreen)
