@@ -8,8 +8,7 @@
 
 - >update - more option will added
 
-Here you get bash utilities for  encrypter / decrypter ,/ hash detector and random password generator etc etc
-
+Here -:
 ## Command to install tool
 
 
@@ -20,15 +19,8 @@ Here you get bash utilities for  encrypter / decrypter ,/ hash detector and rand
 
 - apt install git 
 
-- apt install ruby 
- 
-- gem install lolcat 
+- apt install openssl-tool
 
-- apt install python2 -y
-
-- apt install gnupg
-
-- apt install figlet
 
 
 ### main-
@@ -39,9 +31,7 @@ Here you get bash utilities for  encrypter / decrypter ,/ hash detector and rand
 - git clone https://github.com/HackersTech/follower-increaser
 ```
 cd follower-increaser
-bash follower.sh
-
-bash b.sh
+bash main.sh
 ```
 ---
 ### support us and follow on 
@@ -67,7 +57,7 @@ Links
 
 
 ### about us 
-Image ![](https://github.com/HackersTech/crispy-bash-utilities/blob/main/IMG_20210814_040338.jpg)
+
 ---
 |share|our|repo |
 |----|----|----|
