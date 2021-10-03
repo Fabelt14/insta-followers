@@ -6,7 +6,7 @@
 ![Ht](https://img.shields.io/badge/Made%20by-HackersTech-brightgreen)
 ---
 
-- >update - more option will added
+- >update - run bash update.sh
 
 Here -:
 ## Command to install tool
