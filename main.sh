@@ -1,5 +1,3 @@
-
-
 string4=$(openssl rand -hex 32 | cut -c 1-4)
 string8=$(openssl rand -hex 32  | cut -c 1-8)
 string12=$(openssl rand -hex 32 | cut -c 1-12)
@@ -12,7 +10,6 @@ header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www
 var=$(curl -i -s -H "$header" https://i.instagram.com/api/v1/si/fetch_headers/?challenge_type=signup&guid=$uuid > /dev/null)
 var2=$(echo $var | grep -o 'csrftoken=.*' | cut -d ';' -f1 | cut -d '=' -f2)
 ig_sig="4f8732eb9ba7d1c8e8897a75d6474d4eb3f5279137431b2aafb71fafe2abe178"
-
 
 
 banner() {
@@ -659,4 +656,3 @@ fi
 
 banner
 menu
-
