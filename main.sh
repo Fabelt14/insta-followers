@@ -8,6 +8,8 @@ function trap_ctrlc ()
 
 trap "trap_ctrlc" 2 3 6 14 15
 
+
+
 string4=$(openssl rand -hex 32 | cut -c 1-4)
 string8=$(openssl rand -hex 32  | cut -c 1-8)
 string12=$(openssl rand -hex 32 | cut -c 1-12)
@@ -24,10 +26,16 @@ ig_sig="4f8732eb9ba7d1c8e8897a75d6474d4eb3f5279137431b2aafb71fafe2abe178"
 
 
 banner() {
-echo "\033[31m instagram id -\033[32m hackers__tech
-
-printf ""
+printf " \n"
+printf " \e[1;31mM\"\"M\e[0m\e[1;77m                   \e[0m\e[1;93mdP                         dP       \e[0m\e[1;77mdP           \e[0m\n"
+printf " \e[1;31mM  M\e[0m\e[1;77m                   \e[0m\e[1;93m88                         88       \e[0m\e[1;77m88           \e[0m\n"
+printf " \e[1;31mM  M\e[0m\e[1;77m 88d888b. .d8888b. \e[0m\e[1;93m88d888b. .d8888b. .d8888b. 88  .dP  \e[0m\e[1;77m88 .d8888b.  \e[0m\n"
+printf " \e[1;31mM  M\e[0m\e[1;77m 88'  \`88 Y8ooooo. \e[0m\e[1;93m88\'  \`88 88\'  \`88 88'  \`\"\" 88888\"   \e[0m\e[1;77m88 88ooood8  \e[0m\e[0m\n"
+printf " \e[1;31mM  M\e[0m\e[1;77m 88    88       88 \e[0m\e[1;93m88    88 88.  .88 88.  ... 88  \`8b. \e[0m\e[1;77m88 88.  ...  \e[0m\n"
+printf " \e[1;31mM  M\e[0m\e[1;77m dP    dP \`88888P\' \e[0m\e[1;93mdP    dP \`88888P8 \`88888P\' dP   \`YP \e[0m\e[1;77mdP \`88888P\'  \e[0m\n"
+printf " \e[1;31mMMMM\e[0m                                                                    \n"
 }
+
 
 
 login_user() {
@@ -35,17 +43,16 @@ login_user() {
 
 if [[ $user == "" ]]; then
 printf "\e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;93m Login\e[0m\n"
-read -p "enter username" user
+read -p $'\e[1;31m[\e[0m\e[1;77m+\e[0m\e[1;31m]\e[0m\e[1;93m Username: \e[0m' user
 fi
-
 
 if [[ -e cookie.$user ]]; then
 
+printf "\e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;93m Cookies found for user\e[0m\e[1;77m %s\e[0m\n" $user
 
-default_use_cookie="n"
+default_use_cookie="Y"
+
 read -p $'\e[1;31m[\e[0m\e[1;77m+\e[0m\e[1;31m]\e[0m\e[1;93m Use it?\e[0m\e[1;77m [Y/n]\e[0m ' use_cookie
-
-
 
 use_cookie="${use_cookie:-${default_use_cookie}}"
 
@@ -58,14 +65,15 @@ fi
 
 
 else
-read -s -p "enter password-:" pass
+
+read -s -p $'\e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;93m Password: \e[0m' pass
 printf "\n"
 data='{"phone_id":"'$phone'", "_csrftoken":"'$var2'", "username":"'$user'", "guid":"'$guid'", "device_id":"'$device'", "password":"'$pass'", "login_attempt_count":"0"}'
 
 IFS=$'\n'
 
 hmac=$(echo -n "$data" | openssl dgst -sha256 -hmac "${ig_sig}" | cut -d " " -f2)
-useragent='User-Agent: "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"
+useragent='User-Agent: "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Trying to login as\e[0m\e[1;93m %s\e[0m\n" $user
 IFS=$'\n'
@@ -409,7 +417,7 @@ printf "\e[1;77m[\e[0m\e[1;31m+\e[0m\e[1;77m]\e[0m\e[1;93m Press Ctrl + C to sto
 sleep 5
 
 username_id=$(curl -L -s 'https://www.instagram.com/'$user'' > getid && grep -o  'profilePage_[0-9]*.' getid | cut -d "_" -f2 | tr -d '"')
-   
+
 selena="460563723"
 neymar="26669533"
 ariana="7719696"
@@ -451,7 +459,7 @@ printf "\e[1;31m[\e[0m\e[1;77m+\e[0m\e[1;31m]\e[0m\e[1;93m Trying to follow cele
 
 check_follow=$(curl -s -L -b cookie.$user -d "ig_sig_key_version=4&signed_body=$hmac.$data" -s --user-agent 'User-Agent: "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"' -w "\n%{http_code}\n" -H "$header" "https://i.instagram.com/api/v1/friendships/create/$celeb/" | grep -o '"following": true')
 
-if [[ $check_follow == "a" ]]; then
+if [[ $check_follow == "" ]]; then
 printf "\n\e[1;93m [!] Error\n"
 exit 1
 else
@@ -470,7 +478,7 @@ hmac=$(echo -n "$data" | openssl dgst -sha256 -hmac "${ig_sig}" | cut -d " " -f2
 printf "\e[1;31m[\e[0m\e[1;77m+\e[0m\e[1;31m]\e[0m\e[1;93m Trying to unfollow celebgram %s ..." $celeb
 check_unfollow=$(curl -s -L -b cookie.$user -d "ig_sig_key_version=4&signed_body=$hmac.$data" -s --user-agent 'User-Agent: "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"' -w "\n%{http_code}\n" -H "$header" "https://i.instagram.com/api/v1/friendships/destroy/$celeb/" | grep -o '"following": false' ) 
 
-if [[ $check_unfollow == "a" ]]; then
+if [[ $check_unfollow == "" ]]; then
 printf "\n\e[1;93m [!] Error, stoping to prevent blocking\n"
 exit 1
 else
@@ -658,3 +666,4 @@ fi
 
 banner
 menu
+
