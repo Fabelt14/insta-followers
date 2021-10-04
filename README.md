@@ -1,7 +1,10 @@
 # follower-increaser
-# instagram  tracker and 
-# follower increaser
-// 
+# instagram  tracker and follower increaser
+### Advantages -
+- >More advance tool 
+- >Easy to use
+- >allows updating tool 
+
 ---
 ![Ht](https://img.shields.io/badge/Made%20by-HackersTech-brightgreen)
 ---
