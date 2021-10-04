@@ -36,6 +36,10 @@ Here -:
 cd follower-increaser
 bash main.sh
 ```
+For supporting give command
+
+->bash help.sh
+ 
 ---
 ### support us and follow on 
 
