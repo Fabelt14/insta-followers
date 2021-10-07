@@ -31,7 +31,7 @@ Here -:
 **clone** **repo**
 
 
-- git clone https://github.com/HackersTech/follower-increaser
+- git clone https://github.com/HackersTech/insta-followers
 ```
 cd follower-increaser
 python follow.py
