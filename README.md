@@ -34,7 +34,7 @@ Here -:
 - git clone https://github.com/HackersTech/follower-increaser
 ```
 cd follower-increaser
-bash main.sh
+python follow.py
 ```
 For supporting give command
 
