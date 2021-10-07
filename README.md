@@ -33,7 +33,7 @@ Here -:
 
 - git clone https://github.com/HackersTech/insta-followers
 ```
-cd follower-increaser
+cd insta-followers
 python follow.py
 ```
 For supporting give command
