@@ -1,7 +1,7 @@
 
 import os
 from multiprocessing import Pool,pool
-processes = ( "main.sh", " h.sh" )
+processes = ( "main.sh", " help.sh" )
 
 
 def run_process(process):
