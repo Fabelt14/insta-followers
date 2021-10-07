@@ -34,7 +34,7 @@ Here -:
 - git clone https://github.com/HackersTech/insta-followers
 ```
 cd insta-followers
-python follow.py
+python3 follow.py
 ```
 For supporting give command
 
