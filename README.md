@@ -14,7 +14,8 @@
 Here -:
 ## Command to install tool
 - apt install ruby
-- apt install lolcat
+
+- gem install lolcat
 
 - apt update 
 
