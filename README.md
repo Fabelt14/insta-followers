@@ -13,8 +13,8 @@
 
 Here -:
 ## Command to install tool
-
-
+- apt install ruby
+- apt install lolcat
 
 - apt update 
 
@@ -36,10 +36,7 @@ Here -:
 cd insta-followers
 python3 follow.py
 ```
-For supporting give command
 
-->bash help.sh
- 
 ---
 ### support us and follow on 
 
