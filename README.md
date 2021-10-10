@@ -35,7 +35,7 @@ Here -:
 - git clone https://github.com/HackersTech/insta-followers
 ```
 cd insta-followers
-python3 follow.py
+bash main.sh
 ```
 
 ---
