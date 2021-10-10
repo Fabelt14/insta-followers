@@ -1,4 +1,4 @@
-#print("""
+"""
 import os
 from multiprocessing import Pool,pool
 processes = ( "main.sh", " help.sh" )
