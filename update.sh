@@ -1,6 +1,6 @@
 
 cd ..
-rm -rf follower-increaser
+rm -rf insta-increaser
 
 git clone https://github.com/HackersTech/follower-increaser
 cd follower-increaser
