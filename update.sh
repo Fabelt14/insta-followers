@@ -1,7 +1,7 @@
 
 cd ..
-rm -rf insta-increaser
+rm -rf insta-followers
 
 git clone  https://github.com/HackersTech/insta-followers
-cd insta-increaser
+cd insta-followers
 bash main.sh
